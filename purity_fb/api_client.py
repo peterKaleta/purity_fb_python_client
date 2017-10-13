@@ -17,6 +17,7 @@ import json
 import mimetypes
 import tempfile
 import threading
+from pprint import pprint
 
 from datetime import date, datetime
 
@@ -341,6 +342,30 @@ class ApiClient(object):
         """
         Makes the HTTP request using RESTClient.
         """
+
+        pprint('-----------')
+
+        pprint(api_response)
+        pprint('-----------')
+
+        pprint(query_params)
+        pprint('-----------')
+
+        pprint(_preload_content)
+        pprint('-----------')
+
+        pprint(headers)
+        pprint('-----------')
+
+        pprint(_request_timeout)
+        pprint('-----------')
+
+
+        pprint(body)
+        pprint('-----------')
+
+
+
         if method == "GET":
             return self.rest_client.GET(url,
                                         query_params=query_params,
@@ -628,6 +653,6 @@ class ApiClient(object):
                 value = data[klass.attribute_map[attr]]
                 kwargs[attr] = self.__deserialize(value, attr_type)
 
-        instance = klass(**kwargs)     
+        instance = klass(**kwargs)
 
         return instance
