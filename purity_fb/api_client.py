@@ -343,26 +343,34 @@ class ApiClient(object):
         Makes the HTTP request using RESTClient.
         """
 
-        pprint('-----------')
+        if method:
+            pprint('Method-----------')
+            pprint(method)
 
-        pprint(api_response)
-        pprint('-----------')
+        if query_params:
+            pprint('Query Params-----------')
+            pprint(query_params)
+            pprint('-----------')
 
-        pprint(query_params)
-        pprint('-----------')
+        if _preload_content:
+            pprint('preload-----------')
+            pprint(_preload_content)
+            pprint('-----------')
 
-        pprint(_preload_content)
-        pprint('-----------')
+        if headers:
+            pprint('Headers-----------')
+            pprint(headers)
+            pprint('-----------')
 
-        pprint(headers)
-        pprint('-----------')
+        if _request_timeout:
+            pprint('timeout-----------')
+            pprint(_request_timeout)
+            pprint('-----------')
 
-        pprint(_request_timeout)
-        pprint('-----------')
-
-
-        pprint(body)
-        pprint('-----------')
+        if body:
+            pprint('body-----------')
+            pprint(body)
+            pprint('-----------')
 
 
 
