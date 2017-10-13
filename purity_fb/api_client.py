@@ -343,6 +343,14 @@ class ApiClient(object):
         Makes the HTTP request using RESTClient.
         """
 
+
+        pprint('------NEW REQUEST-----')
+
+
+        if url:
+            pprint('url-----------')
+            pprint(url)
+
         if method:
             pprint('Method-----------')
             pprint(method)
@@ -372,6 +380,12 @@ class ApiClient(object):
             pprint(body)
             pprint('-----------')
 
+
+        pprint('-----------')
+        pprint('-----------')
+        pprint('-----------')
+        pprint('-----------')
+        pprint('-----------')
 
 
         if method == "GET":
