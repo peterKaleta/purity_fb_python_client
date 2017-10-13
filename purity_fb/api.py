@@ -5,6 +5,7 @@ from purity_fb.apis.file_system_snapshots_api import FileSystemSnapshotsApi
 from purity_fb.apis.file_system_snapshots_beta_api import FileSystemSnapshotsBetaApi
 from purity_fb.api_client import ApiClient
 from purity_fb import rest
+from pprint import pprint
 
 import ssl
 import urllib3
@@ -35,6 +36,8 @@ class PurityFb:
         except rest.ApiException:
             pass
         res = self._auth.login_with_http_info(api_token=api_token)
+        pprint('res')
+        pprint(res)
         self._api_client.default_headers['x-auth-token'] = res[2]['x-auth-token']
         return res[1]
 

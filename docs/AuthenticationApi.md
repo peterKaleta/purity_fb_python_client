@@ -1,11 +1,13 @@
 # purity_fb.AuthenticationApi
 
+from pprint import pprint
+
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**login**](AuthenticationApi.md#login) | **POST** /login | 
-[**logout**](AuthenticationApi.md#logout) | **POST** /logout | 
+[**login**](AuthenticationApi.md#login) | **POST** /login |
+[**logout**](AuthenticationApi.md#logout) | **POST** /logout |
 
 
 # **login**
@@ -15,7 +17,7 @@ Method | HTTP request | Description
 
 Log in to the server
 
-### Example 
+### Example
 ```python
 from purity_fb import PurityFb, FileSystem, rest
 
@@ -34,7 +36,7 @@ except rest.ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**| the token to log in | 
+ **api_token** | **str**| the token to log in |
 
 ### Return type
 
@@ -58,7 +60,7 @@ Name | Type | Description  | Notes
 
 Log out from the server
 
-### Example 
+### Example
 ```python
 from purity_fb import PurityFb, FileSystem, rest
 
@@ -68,6 +70,10 @@ try:
     # login to the array with your API_TOKEN
     # use *_with_http_info method to get response header as well as body
     res = fb.authentication.login_with_http_info(API_TOKEN)
+
+    pprint('return data -------')
+    pprint(return_data)
+
     X_AUTH_TOKEN = res[2]['x-auth-token']
     # update x-auth-token header using the response of log in
     fb.authentication._api_client.default_headers['x-auth-token'] = X_AUTH_TOKEN
@@ -98,4 +104,3 @@ void (empty response body)
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
-
